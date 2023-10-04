@@ -1,5 +1,4 @@
 
-
 inquirer
   .prompt([
     /* Pass your questions in here */

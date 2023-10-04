@@ -4,7 +4,7 @@
     "@inquirer/confirm": "^2.0.14",
     "@inquirer/editor": "^1.2.12",
     "@inquirer/prompts": "^3.2.0",
-    "inquirer": "^8.2.4",
+    "inquirer": "^8.2.6",
     "jest": "^29.7.0"
   }
 }
