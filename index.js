@@ -1,7 +1,7 @@
 const filesystem = require('./node_modules/graceful-fs/graceful-fs')
 const inquirer = require("inquirer");
-const {circle}= require("./lib/shapes");
-const { choices } = require('yargs');
+const {circle}= require('./lib/shapes');
+// const { choices } = require('yargs');
 
 class svg{
     constructor(){
@@ -12,7 +12,7 @@ class svg{
         //return`<svg with="300" height="200">  ${this.shapeElement}${this.textElement}</svg>`
         return `svg version="1.1" xmlns= "https://www.w3.org/2000/svg" with="300" height="200"`
     }
-    set svg.textElement(text,color){
+    set svg.textElement (text,color){
         this.textElement=`<text x="150" y="125" font-size="60" text-anchor="middle" fill="Green"`
     }
     set shapeElement(shapes){
