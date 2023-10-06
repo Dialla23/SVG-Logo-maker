@@ -12,7 +12,7 @@ class svg{
         //return`<svg with="300" height="200">  ${this.shapeElement}${this.textElement}</svg>`
         return `svg version="1.1" xmlns= "https://www.w3.org/2000/svg" with="300" height="200"`
     }
-    set svg.textElement (text,color){
+     textElement (text,color){
         this.textElement=`<text x="150" y="125" font-size="60" text-anchor="middle" fill="Green"`
     }
     set shapeElement(shapes){
@@ -21,26 +21,23 @@ class svg{
 }
 
 //Array of questions for user input.
-{
-    type:"input",
-    name:"SVG"
-    message: "SVG"
+let questions = [
+    {
+        type:"list",
+        name: "pixle-image",
+        message: "logo.svg",
+        choices:["circle"],
+    },
+    {
+    },
+    ]
+  
 
 
-}
-{
-    type:"input",
-    name:"text-color"
-    message: "White color"
-}
-{
-    type:"input",
-    name:"shape"
-    message: "Green"
-}
-{
-    type:"list",
-    name:"pixle-image"
-    message: "logo.svg"
-    choices:["circle"],
-}
+
+
+   
+
+
+
+
