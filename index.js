@@ -1,39 +1,49 @@
-const filesystem = require('./node_modules/graceful-fs/graceful-fs')
-const inquirer = require("inquirer");
-const {circle}= require('./lib/shapes');
-// const { choices } = require('yargs');
 
-class svg{
-    constructor(){
-        this.textElement=''
-        this.shapeElement=''
-    }
-    render(){
-        //return`<svg with="300" height="200">  ${this.shapeElement}${this.textElement}</svg>`
-        return `svg version="1.1" xmlns= "https://www.w3.org/2000/svg" with="300" height="200"`
-    }
-     textElement (text,color){
-        this.textElement=`<text x="150" y="125" font-size="60" text-anchor="middle" fill="Green"`
-    }
-    set shapeElement(shapes){
-        this.shapeElement=shapes.render()
-    }
-}
+const inquirer = require("inquirer");
+const SVG = require('./lib/svg');
+
+
+
 
 //Array of questions for user input.
 let questions = [
     {
-        type:"list",
-        name: "pixle-image",
-        message: "logo.svg",
-        choices:["circle"],
+        type: 'input',
+        message: "Enter the text for the logo",
+        name: 'title',
+
     },
     {
+        type: 'input',
+        message: "Enter color for the logo",
+        name: 'color',
+
+    },
+    {
+        type: 'input',
+        message: "Enter text color for the logo",
+        name: 'textcolor',
+
+    },
+
+
+
+
+    {
+        type:"list",
+        name: "shape",
+        message: "select the shape of the logo",
+        choices:["circle", "square", "triangle"],
     },
     ]
-  
-
-
+    
+    function init(){
+        inquirer.prompt(questions).then(answers=>{
+            const logo= new SVG(answers.title, answers.textcolor,answers.shape, answers.Color)
+            console.log(logo)
+        })
+    }
+    init()
 
 
    
